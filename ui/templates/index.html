@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Generation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h1 {
+            color: #333;
+            margin-top: 20px;
+            text-align: center;
+        }
+        form {
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+        input[type="file"],
+        select,
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Generation</h1>
+    <form action="/generate" method="post" enctype="multipart/form-data">
+        <label for="source_image">Source Image:</label>
+        <input type="file" id="source_image" name="source_image" multiple>
+
+        <label for="reference_image">Reference Image:</label>
+        <input type="file" id="reference_image" name="reference_image" multiple>
+
+        <label for="model">Select Model:</label>
+        <select id="model" name="model">
+            <option value="resnet">ResNet 生成人</option>
+            <option value="swinnet">Swinnet 生成人</option>
+            <option value="anime">生成動漫人物</option>
+            <option value="animal">生成動物</option>
+            <option value="swinunet">SwinUnet 生成人</option>
+        </select>
+
+        <input type="submit" value="Generate">
+    </form>
+</body>
+</html>
