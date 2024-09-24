@@ -1,0 +1,5 @@
+{
+    "LPIPS_reference/male2female": 0.015036507102195174,
+    "LPIPS_reference/female2male": 0.016535120899789035,
+    "LPIPS_reference/mean": 0.015785814000992104
+}

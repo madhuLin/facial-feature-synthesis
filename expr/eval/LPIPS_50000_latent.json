@@ -1,0 +1,5 @@
+{
+    "LPIPS_latent/male2female": 0.5200854521244764,
+    "LPIPS_latent/female2male": 0.5451447870582342,
+    "LPIPS_latent/mean": 0.5326151195913553
+}
